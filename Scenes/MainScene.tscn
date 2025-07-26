@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=4 uid="uid://c5ln52snt5u2u"]
+
+[ext_resource type="PackedScene" uid="uid://bpsqr6euak53h" path="res://Scenes/Player/PlayerController.tscn" id="1_52fb6"]
+[ext_resource type="PackedScene" uid="uid://co21duh7nptji" path="res://Systems/Audio Manager/audio_registry.tscn" id="2_tr2i4"]
+[ext_resource type="Texture2D" uid="uid://bje16i8c6rbyv" path="res://Assets/Sprites/test_tilemap.png" id="4_7rqgy"]
+[ext_resource type="PackedScene" uid="uid://db4yao8hpaggn" path="res://test.tscn" id="4_qxria"]
+[ext_resource type="PackedScene" uid="uid://cxydgneif82pf" path="res://HUD.tscn" id="5_qxria"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rqgy"]
+texture = ExtResource("4_7rqgy")
+0:0/0 = 0
+0:0/0/custom_data_0 = "grass"
+1:0/0 = 0
+1:0/0/custom_data_0 = "dirt"
+2:0/0 = 0
+2:0/0/custom_data_0 = "rock"
+
+[sub_resource type="TileSet" id="TileSet_qxria"]
+custom_data_layer_0/name = "surface_type"
+custom_data_layer_0/type = 4
+sources/0 = SubResource("TileSetAtlasSource_7rqgy")
+
+[node name="Main Scene" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAD9//3/AAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9//7/AAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAP3/AAABAAAAAAADAP7/AAABAAAAAAADAP//AAABAAAAAAADAAAAAAABAAAAAAADAAEAAAABAAAAAAADAAIAAAABAAAAAAAEAAIAAAABAAAAAAAFAAIAAAABAAAAAAAGAAIAAAABAAAAAAAHAAIAAAABAAAAAAAIAAIAAAABAAAAAAAIAAEAAAABAAAAAAAIAAAAAAABAAAAAAAIAP//AAABAAAAAAAIAP7/AAABAAAAAAAIAP3/AAABAAAAAAAHAP3/AAABAAAAAAAGAP3/AAABAAAAAAAFAP3/AAABAAAAAAAEAP3/AAABAAAAAAAEAP7/AAABAAAAAAAEAP//AAABAAAAAAAEAAAAAAABAAAAAAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAAFAAAAAAABAAAAAAAFAP//AAABAAAAAAAFAP7/AAABAAAAAAAGAP7/AAABAAAAAAAGAP//AAABAAAAAAAGAAAAAAABAAAAAAAGAAEAAAABAAAAAAAHAAEAAAABAAAAAAAHAAAAAAABAAAAAAAHAP//AAABAAAAAAAHAP7/AAABAAAAAAD8//3/AAACAAAAAAD7//3/AAACAAAAAAD6//3/AAACAAAAAAD5//3/AAACAAAAAAD4//3/AAACAAAAAAD3//3/AAACAAAAAAD3//7/AAACAAAAAAD3////AAACAAAAAAD3/wAAAAACAAAAAAD3/wEAAAACAAAAAAD3/wIAAAACAAAAAAD4/wIAAAACAAAAAAD5/wIAAAACAAAAAAD6/wIAAAACAAAAAAD7/wIAAAACAAAAAAD8/wIAAAACAAAAAAD8/wEAAAACAAAAAAD8/wAAAAACAAAAAAD8////AAACAAAAAAD8//7/AAACAAAAAAD7//7/AAACAAAAAAD6//7/AAACAAAAAAD5//7/AAACAAAAAAD4//7/AAACAAAAAAD4////AAACAAAAAAD4/wAAAAACAAAAAAD4/wEAAAACAAAAAAD5/wEAAAACAAAAAAD5/wAAAAACAAAAAAD5////AAACAAAAAAD6////AAACAAAAAAD6/wAAAAACAAAAAAD6/wEAAAACAAAAAAD7/wEAAAACAAAAAAD7/wAAAAACAAAAAAD7////AAACAAAAAAA=")
+tile_set = SubResource("TileSet_qxria")
+
+[node name="Environment" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player Controller" parent="Environment" instance=ExtResource("1_52fb6")]
+y_sort_enabled = true
+
+[node name="CameraFollow" parent="Environment/Player Controller/Scripts" index="2" node_paths=PackedStringArray("camera")]
+camera = NodePath("../../../../Camera2D")
+
+[node name="FootstepController" parent="Environment/Player Controller/Scripts" index="3"]
+tilemap_layer_path = NodePath("../../../../TileMapLayer")
+default_event = "footstep_rock"
+
+[node name="InteractionManager" parent="Environment/Player Controller/Scripts" index="4" node_paths=PackedStringArray("interaction_prompt_node", "interaction_prompt_label")]
+interaction_prompt_node = NodePath("../../../../HUD/InteractionPrompt")
+interaction_prompt_label = NodePath("../../../../HUD/InteractionPrompt/MarginContainer/InteractionPromptText")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioRegistry" parent="." instance=ExtResource("2_tr2i4")]
+
+[node name="Node2D" parent="." instance=ExtResource("4_qxria")]
+position = Vector2(-100, -6)
+interaction_text = "Light Campfire"
+
+[node name="HUD" parent="." instance=ExtResource("5_qxria")]
+
+[editable path="Environment/Player Controller"]
+[editable path="HUD"]

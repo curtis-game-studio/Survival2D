@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SoundEvent" load_steps=3 format=3 uid="uid://brlif8d7acera"]
+
+[ext_resource type="Script" uid="uid://dvcwlb1203jp1" path="res://Systems/Audio Manager/sound_event.gd" id="1_05r1t"]
+[ext_resource type="AudioStream" uid="uid://bt3j1qyb8500x" path="res://Assets/Audio/Ambience/Forest/ambience_forest_birds.ogg" id="2_263b0"]
+
+[resource]
+script = ExtResource("1_05r1t")
+name = "ambience_forest_birds"
+streams = Array[AudioStream]([ExtResource("2_263b0")])
+type = "Ambience"
+volume_db = 0.0
+loop = true
+max_distance = 128
+attenuation = 1.5
+metadata/_custom_type_script = "uid://dvcwlb1203jp1"

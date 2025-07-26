@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="SoundEvent" load_steps=12 format=3 uid="uid://b82we66oic4be"]
+
+[ext_resource type="Script" uid="uid://dvcwlb1203jp1" path="res://Systems/Audio Manager/sound_event.gd" id="1_bn5sf"]
+[ext_resource type="AudioStream" uid="uid://jpylaxx587rt" path="res://Assets/Audio/Footsteps/Footsteps_Mud/Footsteps_Mud_Walk_01.wav" id="2_cv5sj"]
+[ext_resource type="AudioStream" uid="uid://275n4fe3m1o0" path="res://Assets/Audio/Footsteps/Footsteps_Mud/Footsteps_Mud_Walk_02.wav" id="3_btv2s"]
+[ext_resource type="AudioStream" uid="uid://c4yptor2dju26" path="res://Assets/Audio/Footsteps/Footsteps_Mud/Footsteps_Mud_Walk_03.wav" id="4_7a602"]
+[ext_resource type="AudioStream" uid="uid://bk4fyduypc46k" path="res://Assets/Audio/Footsteps/Footsteps_Mud/Footsteps_Mud_Walk_04.wav" id="5_wk5t4"]
+[ext_resource type="AudioStream" uid="uid://br50yp4x24dcj" path="res://Assets/Audio/Footsteps/Footsteps_Mud/Footsteps_Mud_Walk_05.wav" id="6_73nr1"]
+[ext_resource type="AudioStream" uid="uid://b24ysagnss45h" path="res://Assets/Audio/Footsteps/Footsteps_Mud/Footsteps_Mud_Walk_06.wav" id="7_62knd"]
+[ext_resource type="AudioStream" uid="uid://8x2o3vj65gs3" path="res://Assets/Audio/Footsteps/Footsteps_Mud/Footsteps_Mud_Walk_07.wav" id="8_ek3bb"]
+[ext_resource type="AudioStream" uid="uid://ctxiwskk5gp8t" path="res://Assets/Audio/Footsteps/Footsteps_Mud/Footsteps_Mud_Walk_08.wav" id="9_15win"]
+[ext_resource type="AudioStream" uid="uid://js7ay3bebtxi" path="res://Assets/Audio/Footsteps/Footsteps_Mud/Footsteps_Mud_Walk_09.wav" id="10_kjjk3"]
+[ext_resource type="AudioStream" uid="uid://o4apfko8x4v" path="res://Assets/Audio/Footsteps/Footsteps_Mud/Footsteps_Mud_Walk_10.wav" id="11_ln716"]
+
+[resource]
+script = ExtResource("1_bn5sf")
+name = "footstep_dirt"
+streams = Array[AudioStream]([ExtResource("2_cv5sj"), ExtResource("3_btv2s"), ExtResource("4_7a602"), ExtResource("5_wk5t4"), ExtResource("6_73nr1"), ExtResource("7_62knd"), ExtResource("8_ek3bb"), ExtResource("9_15win"), ExtResource("10_kjjk3"), ExtResource("11_ln716")])
+type = "SFX"
+volume_db = 0.0
+loop = false
+max_distance = 128
+attenuation = 1.5
+metadata/_custom_type_script = "uid://dvcwlb1203jp1"

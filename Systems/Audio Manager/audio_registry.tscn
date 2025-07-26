@@ -1,0 +1,12 @@
+[gd_scene load_steps=7 format=3 uid="uid://co21duh7nptji"]
+
+[ext_resource type="Script" uid="uid://b6utuvy631uim" path="res://Systems/Audio Manager/audio_registry.gd" id="1_65mm3"]
+[ext_resource type="Script" uid="uid://dvcwlb1203jp1" path="res://Systems/Audio Manager/sound_event.gd" id="2_ifw7r"]
+[ext_resource type="Resource" uid="uid://kakxla6atarq" path="res://Assets/Audio/Footsteps/Footsteps_Grass/footstep_grass.tres" id="3_f8h8d"]
+[ext_resource type="Resource" uid="uid://b82we66oic4be" path="res://Assets/Audio/Footsteps/Footsteps_Mud/footstep_dirt.tres" id="4_gapk2"]
+[ext_resource type="Resource" uid="uid://d3qfuk3rc3amo" path="res://Assets/Audio/Footsteps/Footsteps_Rock/footstep_rock.tres" id="5_kyq7i"]
+[ext_resource type="Resource" uid="uid://6a13ccb3161f" path="res://Assets/Audio/Ambience/Campfire/ambience_campfire.tres" id="6_gapk2"]
+
+[node name="AudioRegistry" type="Node"]
+script = ExtResource("1_65mm3")
+sound_events = Array[ExtResource("2_ifw7r")]([ExtResource("3_f8h8d"), ExtResource("4_gapk2"), ExtResource("5_kyq7i"), ExtResource("6_gapk2")])

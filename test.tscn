@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://db4yao8hpaggn"]
+
+[ext_resource type="Script" uid="uid://bcy6od3rf0goa" path="res://test_interactable.gd" id="1_8uh7m"]
+[ext_resource type="Texture2D" uid="uid://bd25uixqiq3yg" path="res://Assets/Sprites/Player Sprites.png" id="1_37kl0"]
+[ext_resource type="Shader" uid="uid://duibfmblku11q" path="res://test.gdshader" id="2_6uqi0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ppyta"]
+shader = ExtResource("2_6uqi0")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/progress = 1.0
+shader_parameter/width = 0.004
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8uh7m"]
+
+[node name="Test" type="StaticBody2D"]
+script = ExtResource("1_8uh7m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ppyta")
+texture = ExtResource("1_37kl0")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8uh7m")

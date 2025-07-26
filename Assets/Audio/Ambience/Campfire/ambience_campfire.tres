@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SoundEvent" load_steps=3 format=3 uid="uid://6a13ccb3161f"]
+
+[ext_resource type="Script" uid="uid://dvcwlb1203jp1" path="res://Systems/Audio Manager/sound_event.gd" id="1_a0u2s"]
+[ext_resource type="AudioStream" uid="uid://b1222pjieuwr2" path="res://Assets/Audio/Ambience/Campfire/ambience_campfire.ogg" id="2_hdvmm"]
+
+[resource]
+script = ExtResource("1_a0u2s")
+name = "ambience_campfire"
+streams = Array[AudioStream]([ExtResource("2_hdvmm")])
+type = "SFX"
+volume_db = 0.0
+loop = true
+max_distance = 512
+attenuation = 1.5
+metadata/_custom_type_script = "uid://dvcwlb1203jp1"

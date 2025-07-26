@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SoundEvent" load_steps=11 format=3 uid="uid://d3qfuk3rc3amo"]
+
+[ext_resource type="Script" uid="uid://dvcwlb1203jp1" path="res://Systems/Audio Manager/sound_event.gd" id="1_m3lo2"]
+[ext_resource type="AudioStream" uid="uid://cllf3jx52ska5" path="res://Assets/Audio/Footsteps/Footsteps_Rock/Footsteps_Rock_Walk_01.wav" id="2_uag5l"]
+[ext_resource type="AudioStream" uid="uid://bntrmwxr0tmrh" path="res://Assets/Audio/Footsteps/Footsteps_Rock/Footsteps_Rock_Walk_02.wav" id="3_8g2cx"]
+[ext_resource type="AudioStream" uid="uid://c8yoqbsq5421l" path="res://Assets/Audio/Footsteps/Footsteps_Rock/Footsteps_Rock_Walk_03.wav" id="4_tx7do"]
+[ext_resource type="AudioStream" uid="uid://de6v476uvjh5k" path="res://Assets/Audio/Footsteps/Footsteps_Rock/Footsteps_Rock_Walk_04.wav" id="5_jp8g1"]
+[ext_resource type="AudioStream" uid="uid://xrwifjotmhkv" path="res://Assets/Audio/Footsteps/Footsteps_Rock/Footsteps_Rock_Walk_05.wav" id="6_bs68e"]
+[ext_resource type="AudioStream" uid="uid://b780ggs4e2nqi" path="res://Assets/Audio/Footsteps/Footsteps_Rock/Footsteps_Rock_Walk_06.wav" id="7_up57f"]
+[ext_resource type="AudioStream" uid="uid://colfddxrdvxej" path="res://Assets/Audio/Footsteps/Footsteps_Rock/Footsteps_Rock_Walk_07.wav" id="8_fjrn3"]
+[ext_resource type="AudioStream" uid="uid://dp7ya680duu3l" path="res://Assets/Audio/Footsteps/Footsteps_Rock/Footsteps_Rock_Walk_08.wav" id="9_qd3cl"]
+[ext_resource type="AudioStream" uid="uid://d4irdjyaselsc" path="res://Assets/Audio/Footsteps/Footsteps_Rock/Footsteps_Rock_Walk_09.wav" id="10_jxgwj"]
+
+[resource]
+script = ExtResource("1_m3lo2")
+name = "footstep_rock"
+streams = Array[AudioStream]([ExtResource("2_uag5l"), ExtResource("3_8g2cx"), ExtResource("4_tx7do"), ExtResource("5_jp8g1"), ExtResource("6_bs68e"), ExtResource("7_up57f"), ExtResource("8_fjrn3"), ExtResource("9_qd3cl"), ExtResource("10_jxgwj")])
+type = "SFX"
+volume_db = 0.0
+loop = false
+max_distance = 128
+attenuation = 1.5
+metadata/_custom_type_script = "uid://dvcwlb1203jp1"
