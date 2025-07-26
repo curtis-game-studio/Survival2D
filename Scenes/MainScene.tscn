@@ -43,13 +43,13 @@ default_event = "footstep_rock"
 interaction_prompt_node = NodePath("../../../../HUD/InteractionPrompt")
 interaction_prompt_label = NodePath("../../../../HUD/InteractionPrompt/MarginContainer/InteractionPromptText")
 
+[node name="Node2D" parent="Environment" instance=ExtResource("4_qxria")]
+position = Vector2(-100, -6)
+interaction_text = "Light Campfire"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AudioRegistry" parent="." instance=ExtResource("2_tr2i4")]
-
-[node name="Node2D" parent="." instance=ExtResource("4_qxria")]
-position = Vector2(-100, -6)
-interaction_text = "Light Campfire"
 
 [node name="HUD" parent="." instance=ExtResource("5_qxria")]
 

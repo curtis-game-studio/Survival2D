@@ -18,7 +18,6 @@ func _process(_delta: float) -> void:
 		print("Player not set.")
 		return
 
-	var mouse_pos: Vector2 = get_viewport().get_mouse_position()
 	var world_pos: Vector2 = player.get_global_mouse_position()
 	var space_state: PhysicsDirectSpaceState2D = player.get_world_2d().direct_space_state
 
@@ -49,7 +48,8 @@ func _process(_delta: float) -> void:
 					interaction_prompt_label.text = "[E] " + hovered.interaction_text
 					interaction_prompt_node.visible = true
 					interaction_prompt_label.visible = true
-					interaction_prompt_node.position = hovered.global_position + Vector2(0, -30)
+					interaction_prompt_node.position = hovered.global_position + Vector2(0, -35)
+
 				print("Hovering over:", collider.name)
 				break
 
