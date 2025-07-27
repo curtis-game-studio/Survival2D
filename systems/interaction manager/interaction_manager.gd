@@ -46,10 +46,10 @@ func _process(_delta: float) -> void:
 				hovered = collider
 				hovered.set_outline(true)
 				if interaction_prompt_label and interaction_prompt_node:
-					interaction_prompt_label.text = "[E] " + hovered.interaction_text
+					interaction_prompt_label.text = "[ E ] " + hovered.interaction_text
 					interaction_prompt_node.visible = true
 					interaction_prompt_label.visible = true
-					interaction_prompt_node.position = hovered.global_position + Vector2(0, -35)
+					interaction_prompt_node.position = hovered.global_position + Vector2(0, -50)
 
 				print("Hovering over:", collider.name)
 				break

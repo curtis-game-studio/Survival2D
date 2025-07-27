@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://8hdxawekicbx"]
+
+[ext_resource type="Texture2D" uid="uid://dw6qkv2w642jd" path="res://assets/sprites/player_sprites.png" id="1_3tmbf"]
+[ext_resource type="Script" uid="uid://bqlrdjef7fgrw" path="res://Scenes/Player/Scripts/player_headbob.gd" id="2_wsalc"]
+[ext_resource type="Shader" uid="uid://duibfmblku11q" path="res://assets/shaders/outline_shader.gdshader" id="3_1gqhp"]
+
+[sub_resource type="GDScript" id="GDScript_wsalc"]
+script/source = "extends Interactable
+
+var currentstage := 0
+
+func _ready() -> void:
+    _init_interactable()
+    currentstage = 0
+
+func interact():
+    currentstage += 1
+
+func _process(_delta):
+    if currentstage == 0:
+        interaction_text = \"to start chat..\"
+    if currentstage == 1:
+        interaction_text = \"would you like....\"
+    if currentstage == 2:
+        interaction_text = \"to visit mike hawk.....\"
+    if currentstage == 3:
+        interaction_text = \"once he has showered??\"
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mweg2"]
+shader = ExtResource("3_1gqhp")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/width = 0.004
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3tmbf"]
+radius = 6.0
+height = 24.0
+
+[node name="base_npc" type="Area2D"]
+script = SubResource("GDScript_wsalc")
+outline_sprites = Array[NodePath]([NodePath("visuals/legs"), NodePath("visuals/body"), NodePath("visuals/head")])
+
+[node name="visuals" type="Node2D" parent="."]
+
+[node name="shadow" type="Sprite2D" parent="visuals"]
+texture = ExtResource("1_3tmbf")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 16)
+
+[node name="legs" type="Sprite2D" parent="visuals"]
+material = SubResource("ShaderMaterial_mweg2")
+texture = ExtResource("1_3tmbf")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 16)
+
+[node name="body" type="Sprite2D" parent="visuals"]
+material = SubResource("ShaderMaterial_mweg2")
+position = Vector2(0, -16)
+texture = ExtResource("1_3tmbf")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="head" type="Sprite2D" parent="visuals"]
+material = SubResource("ShaderMaterial_mweg2")
+position = Vector2(0, -17)
+texture = ExtResource("1_3tmbf")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("2_wsalc")
+head_node_path = NodePath(".")
+
+[node name="eyes" type="Sprite2D" parent="visuals/head"]
+texture = ExtResource("1_3tmbf")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_3tmbf")
