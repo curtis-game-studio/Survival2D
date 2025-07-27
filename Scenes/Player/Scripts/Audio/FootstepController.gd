@@ -1,6 +1,8 @@
 extends Node
+class_name FootstepController
 
-@export var tilemap_layer_path: NodePath
+@export var player: Node2D
+@export var tilemap_layer: TileMapLayer = null
 @export var default_event := "footstep_default"
 
 @export var surface_footstep_map: Dictionary = {
@@ -10,12 +12,9 @@ extends Node
 	"sand": "footstep_sand"
 }
 
-var tilemap_layer: TileMapLayer = null
-
-func _ready() -> void:
-	tilemap_layer = get_node_or_null(tilemap_layer_path)
+func init_tilemap():
 	if tilemap_layer == null:
-		push_error("❌ TileMapLayer not found at path: " + str(tilemap_layer_path))
+		push_error("❌ FootstepController is missing a TileMapLayer reference.")
 
 func get_surface_type(world_position: Vector2) -> String:
 	if tilemap_layer == null:
@@ -31,9 +30,8 @@ func get_surface_type(world_position: Vector2) -> String:
 	return ""
 
 func play_footstep() -> void:
-	var player = get_parent().get_parent()
-	if not player or not player is Node2D:
-		push_error("❌ FootstepController's parent is not a Node2D")
+	if player == null:
+		push_error("❌ FootstepController has no player reference")
 		return
 
 	var position = player.global_position

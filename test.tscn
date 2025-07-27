@@ -12,7 +12,7 @@ shader_parameter/width = 0.004
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uh7m"]
 
-[node name="Test" type="StaticBody2D"]
+[node name="Test" type="Area2D"]
 script = ExtResource("1_8uh7m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

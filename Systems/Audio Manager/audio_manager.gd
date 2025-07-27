@@ -1,7 +1,7 @@
 extends Node
 class_name AudioManager
 
-var registry: AudioRegistry = null
+@export var registry: AudioRegistry = null
 var looping_positional_players: Dictionary = {}  # key: event_name, value: AudioStreamPlayer2D
 var ambience_layers: Dictionary = {}
 var fade_speed: float = 1.0
@@ -12,7 +12,6 @@ func _ready() -> void:
 		push_warning("⚠️ No current scene loaded")
 		return
 
-	registry = _find_node_recursive(root, "AudioRegistry")
 	if registry == null:
 		push_warning("⚠️ AudioRegistry node not found in the current scene")
 
@@ -39,7 +38,11 @@ func _get_stream(event: SoundEvent, looping: bool = false) -> AudioStream:
 
 # Helper: setup AudioStreamPlayer or AudioStreamPlayer2D
 func _create_player(event: SoundEvent, stream: AudioStream, positional: bool = false, position: Vector2 = Vector2.ZERO) -> Node:
-	var player = AudioStreamPlayer2D.new() if positional else AudioStreamPlayer.new()
+	var player: Node
+	if positional:
+		player = AudioStreamPlayer2D.new()
+	else:
+		player = AudioStreamPlayer.new()
 	player.stream = stream
 	player.bus = event.type
 	player.volume_db = event.volume_db
@@ -181,5 +184,5 @@ func stop_ambience2D(event_name: String, fade_out_time: float = 1.5) -> void:
 	)
 
 func stop_all_ambience2D(fade_out_time: float = 1.5) -> void:
-	for name in ambience_layers.keys():
-		stop_ambience2D(name, fade_out_time)
+	for name1 in ambience_layers.keys():
+		stop_ambience2D(name1, fade_out_time)

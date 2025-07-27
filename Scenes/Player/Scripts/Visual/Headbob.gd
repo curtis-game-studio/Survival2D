@@ -15,5 +15,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	bob_timer += delta * bob_speed
 	var phase = fmod(bob_timer, 1.0)
-	var offset_y = bob_amount if phase < 0.5 else 0
+	var offset_y = bob_amount if phase < 0.5 else 0.0
 	head_node.position = base_position + Vector2(0, offset_y)

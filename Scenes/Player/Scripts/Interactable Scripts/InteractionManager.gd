@@ -8,9 +8,10 @@ class_name InteractionManager
 
 var hovered: Interactable = null
 
-func _ready() -> void:
+func init_prompt():
 	if interaction_prompt_node:
 		interaction_prompt_node.visible = false
+	if interaction_prompt_label:
 		interaction_prompt_label.visible = false
 
 func _process(_delta: float) -> void:

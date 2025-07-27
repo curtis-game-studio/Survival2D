@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://c5ln52snt5u2u"]
+[gd_scene load_steps=7 format=4 uid="uid://c5ln52snt5u2u"]
 
 [ext_resource type="PackedScene" uid="uid://bpsqr6euak53h" path="res://Scenes/Player/PlayerController.tscn" id="1_52fb6"]
-[ext_resource type="PackedScene" uid="uid://co21duh7nptji" path="res://Systems/Audio Manager/audio_registry.tscn" id="2_tr2i4"]
 [ext_resource type="Texture2D" uid="uid://bje16i8c6rbyv" path="res://Assets/Sprites/test_tilemap.png" id="4_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://db4yao8hpaggn" path="res://test.tscn" id="4_qxria"]
 [ext_resource type="PackedScene" uid="uid://cxydgneif82pf" path="res://HUD.tscn" id="5_qxria"]
@@ -29,19 +28,12 @@ tile_set = SubResource("TileSet_qxria")
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player Controller" parent="Environment" instance=ExtResource("1_52fb6")]
+[node name="Player Controller" parent="Environment" node_paths=PackedStringArray("interaction_prompt_panel", "interaction_prompt_label", "tilemap_layer", "camera") instance=ExtResource("1_52fb6")]
 y_sort_enabled = true
-
-[node name="CameraFollow" parent="Environment/Player Controller/Scripts" index="2" node_paths=PackedStringArray("camera")]
-camera = NodePath("../../../../Camera2D")
-
-[node name="FootstepController" parent="Environment/Player Controller/Scripts" index="3"]
-tilemap_layer_path = NodePath("../../../../TileMapLayer")
-default_event = "footstep_rock"
-
-[node name="InteractionManager" parent="Environment/Player Controller/Scripts" index="4" node_paths=PackedStringArray("interaction_prompt_node", "interaction_prompt_label")]
-interaction_prompt_node = NodePath("../../../../HUD/InteractionPrompt")
-interaction_prompt_label = NodePath("../../../../HUD/InteractionPrompt/MarginContainer/InteractionPromptText")
+interaction_prompt_panel = NodePath("../../HUD/InteractionPrompt")
+interaction_prompt_label = NodePath("../../HUD/InteractionPrompt/MarginContainer/InteractionPromptText")
+tilemap_layer = NodePath("../../TileMapLayer")
+camera = NodePath("../../Camera2D")
 
 [node name="Node2D" parent="Environment" instance=ExtResource("4_qxria")]
 position = Vector2(-100, -6)
@@ -49,9 +41,6 @@ interaction_text = "Light Campfire"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="AudioRegistry" parent="." instance=ExtResource("2_tr2i4")]
-
 [node name="HUD" parent="." instance=ExtResource("5_qxria")]
 
-[editable path="Environment/Player Controller"]
 [editable path="HUD"]

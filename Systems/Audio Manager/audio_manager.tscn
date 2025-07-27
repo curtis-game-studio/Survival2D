@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b872trrxqu3tl"]
+[gd_scene load_steps=3 format=3 uid="uid://b872trrxqu3tl"]
 
 [ext_resource type="Script" uid="uid://0nox553qh4yl" path="res://Systems/Audio Manager/audio_manager.gd" id="1_yw6up"]
+[ext_resource type="PackedScene" uid="uid://co21duh7nptji" path="res://Systems/Audio Manager/audio_registry.tscn" id="2_bqej2"]
 
-[node name="AudioManager" type="Node"]
+[node name="AudioManager" type="Node" node_paths=PackedStringArray("registry")]
 script = ExtResource("1_yw6up")
+registry = NodePath("AudioRegistry")
+
+[node name="AudioRegistry" parent="." instance=ExtResource("2_bqej2")]

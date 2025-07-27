@@ -66,7 +66,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Scripts/FootstepController")
+tracks/1/path = NodePath("../Components/Audio/FootstepController")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -108,77 +108,88 @@ _data = {
 radius = 5.0
 height = 12.0
 
-[node name="Player Controller" type="CharacterBody2D"]
+[node name="Player Controller" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "interaction_manager", "footstep_controller", "camera_follow")]
 script = ExtResource("1_kfrkp")
+state_machine = NodePath("Components/Movement/StateMachine")
+interaction_manager = NodePath("Components/Interaction/InteractionManager")
+footstep_controller = NodePath("Components/Audio/FootstepController")
+camera_follow = NodePath("Components/Camera/CameraFollow")
 
-[node name="Visuals" type="Node2D" parent="."]
+[node name="Sprites" type="Node2D" parent="."]
 
-[node name="Shadow" type="Sprite2D" parent="Visuals"]
+[node name="Shadow" type="Sprite2D" parent="Sprites"]
 texture = ExtResource("2_gym7l")
 region_enabled = true
 region_rect = Rect2(0, 48, 16, 16)
 
-[node name="Legs" type="Sprite2D" parent="Visuals"]
+[node name="Legs" type="Sprite2D" parent="Sprites"]
 texture = ExtResource("2_gym7l")
 region_enabled = true
 region_rect = Rect2(0, 32, 16, 16)
 
-[node name="Body" type="Sprite2D" parent="Visuals"]
+[node name="Body" type="Sprite2D" parent="Sprites"]
 position = Vector2(0, -16)
 texture = ExtResource("2_gym7l")
 region_enabled = true
 region_rect = Rect2(0, 16, 16, 16)
 
-[node name="Head" type="Sprite2D" parent="Visuals"]
+[node name="Head" type="Sprite2D" parent="Sprites"]
 position = Vector2(0, -16)
 texture = ExtResource("2_gym7l")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="Eyes" type="Sprite2D" parent="Visuals/Head"]
+[node name="Eyes" type="Sprite2D" parent="Sprites/Head"]
 texture = ExtResource("2_gym7l")
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 16)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Visuals"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprites"]
 libraries = {
 &"": SubResource("AnimationLibrary_icmko")
 }
 
-[node name="Scripts" type="Node" parent="."]
+[node name="Components" type="Node" parent="."]
 
-[node name="StateMachine" type="Node" parent="Scripts" node_paths=PackedStringArray("player", "animation_player")]
+[node name="Movement" type="Node" parent="Components"]
+
+[node name="StateMachine" type="Node" parent="Components/Movement" node_paths=PackedStringArray("player", "animation_player")]
 script = ExtResource("1_k0pio")
-player = NodePath("../..")
-animation_player = NodePath("../../Visuals/AnimationPlayer")
+player = NodePath("../../..")
+animation_player = NodePath("../../../Sprites/AnimationPlayer")
 
-[node name="IdleState" type="Node" parent="Scripts/StateMachine"]
+[node name="IdleState" type="Node" parent="Components/Movement/StateMachine"]
 script = ExtResource("3_gym7l")
 
-[node name="MoveState" type="Node" parent="Scripts/StateMachine"]
+[node name="MoveState" type="Node" parent="Components/Movement/StateMachine"]
 script = ExtResource("4_uta3u")
 
-[node name="Visual Scripts" type="Node" parent="Scripts"]
+[node name="Interaction" type="Node" parent="Components"]
 
-[node name="Headbob" type="Node" parent="Scripts/Visual Scripts"]
-script = ExtResource("3_icmko")
-head_node_path = NodePath("../../../Visuals/Head")
-
-[node name="FlipToMouse" type="Node" parent="Scripts/Visual Scripts" node_paths=PackedStringArray("player_visuals")]
-script = ExtResource("7_w6ygp")
-player_visuals = NodePath("../../../Visuals")
-
-[node name="CameraFollow" type="Node" parent="Scripts" node_paths=PackedStringArray("camera_target")]
-script = ExtResource("6_uta3u")
-camera_target = NodePath("../..")
-
-[node name="FootstepController" type="Node" parent="Scripts"]
-script = ExtResource("9_373yl")
-default_event = "footstep_tile"
-
-[node name="InteractionManager" type="Node" parent="Scripts" node_paths=PackedStringArray("player")]
+[node name="InteractionManager" type="Node" parent="Components/Interaction" node_paths=PackedStringArray("player")]
 script = ExtResource("10_t4e4g")
-player = NodePath("../..")
+player = NodePath("../../..")
+
+[node name="Camera" type="Node" parent="Components"]
+
+[node name="CameraFollow" type="Node" parent="Components/Camera"]
+script = ExtResource("6_uta3u")
+
+[node name="Audio" type="Node" parent="Components"]
+
+[node name="FootstepController" type="Node" parent="Components/Audio"]
+script = ExtResource("9_373yl")
+default_event = "footstep_rock"
+
+[node name="Visual" type="Node" parent="Components"]
+
+[node name="Headbob" type="Node" parent="Components/Visual"]
+script = ExtResource("3_icmko")
+head_node_path = NodePath("../../../Sprites/Head")
+
+[node name="FlipToMouse" type="Node" parent="Components/Visual" node_paths=PackedStringArray("player_visuals")]
+script = ExtResource("7_w6ygp")
+player_visuals = NodePath("../../../Sprites")
 
 [node name="Player Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
