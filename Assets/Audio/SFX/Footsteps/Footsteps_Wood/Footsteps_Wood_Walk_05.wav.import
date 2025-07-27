@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ea7qtbfyo6vf"
-path="res://.godot/imported/Footsteps_Wood_Walk_05.wav-203fef246b6c03889dcc03fcad03496e.sample"
+path="res://.godot/imported/Footsteps_Wood_Walk_05.wav-a32edc486df37f19161ff02e61ce54aa.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/Footsteps/Footsteps_Wood/Footsteps_Wood_Walk_05.wav"
-dest_files=["res://.godot/imported/Footsteps_Wood_Walk_05.wav-203fef246b6c03889dcc03fcad03496e.sample"]
+source_file="res://assets/audio/sfx/footsteps/footsteps_wood/Footsteps_Wood_Walk_05.wav"
+dest_files=["res://.godot/imported/Footsteps_Wood_Walk_05.wav-a32edc486df37f19161ff02e61ce54aa.sample"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SoundEvent" load_steps=3 format=3 uid="uid://cdmsk7ri2wejo"]
 
-[ext_resource type="Script" uid="uid://dvcwlb1203jp1" path="res://Systems/Audio Manager/sound_event.gd" id="1_v6s80"]
-[ext_resource type="AudioStream" uid="uid://cuyq1xxjp5rk4" path="res://Assets/Audio/Ambience/Forest/Ambiance_Rain.ogg" id="2_2xmp4"]
+[ext_resource type="Script" uid="uid://dvcwlb1203jp1" path="res://systems/audio manager/sound_event.gd" id="1_v6s80"]
+[ext_resource type="AudioStream" uid="uid://cuyq1xxjp5rk4" path="res://assets/audio/ambience/forest/Ambiance_Rain.ogg" id="2_2xmp4"]
 
 [resource]
 script = ExtResource("1_v6s80")

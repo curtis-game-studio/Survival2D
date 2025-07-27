@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxydgneif82pf"]
 
-[ext_resource type="FontFile" uid="uid://03j1bs2ju6mc" path="res://Assets/Fonts/C&C Red Alert [INET].ttf" id="1_k5de2"]
+[ext_resource type="FontFile" uid="uid://03j1bs2ju6mc" path="res://assets/fonts/C&C Red Alert [INET].ttf" id="1_k5de2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_efote"]
 font = ExtResource("1_k5de2")

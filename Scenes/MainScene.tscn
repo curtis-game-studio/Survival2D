@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://c5ln52snt5u2u"]
+[gd_scene load_steps=6 format=4 uid="uid://c5ln52snt5u2u"]
 
-[ext_resource type="PackedScene" uid="uid://bpsqr6euak53h" path="res://Scenes/Player/PlayerController.tscn" id="1_52fb6"]
-[ext_resource type="Texture2D" uid="uid://bje16i8c6rbyv" path="res://Assets/Sprites/test_tilemap.png" id="4_7rqgy"]
-[ext_resource type="PackedScene" uid="uid://db4yao8hpaggn" path="res://test.tscn" id="4_qxria"]
+[ext_resource type="PackedScene" uid="uid://bpsqr6euak53h" path="res://scenes/player/player_controller.tscn" id="1_52fb6"]
+[ext_resource type="Texture2D" uid="uid://bje16i8c6rbyv" path="res://assets/sprites/test_tilemap.png" id="4_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://cxydgneif82pf" path="res://HUD.tscn" id="5_qxria"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rqgy"]
@@ -34,10 +33,6 @@ interaction_prompt_panel = NodePath("../../HUD/InteractionPrompt")
 interaction_prompt_label = NodePath("../../HUD/InteractionPrompt/MarginContainer/InteractionPromptText")
 tilemap_layer = NodePath("../../TileMapLayer")
 camera = NodePath("../../Camera2D")
-
-[node name="Node2D" parent="Environment" instance=ExtResource("4_qxria")]
-position = Vector2(-100, -6)
-interaction_text = "Light Campfire"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

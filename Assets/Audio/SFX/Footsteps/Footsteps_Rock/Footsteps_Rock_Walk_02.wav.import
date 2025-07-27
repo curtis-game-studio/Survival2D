@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bntrmwxr0tmrh"
-path="res://.godot/imported/Footsteps_Rock_Walk_02.wav-3c6b302b56ef13b2f247a86dacdae335.sample"
+path="res://.godot/imported/Footsteps_Rock_Walk_02.wav-b0233bdde1f94239c4d32f9f0fc2d2f5.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/Footsteps/Footsteps_Rock/Footsteps_Rock_Walk_02.wav"
-dest_files=["res://.godot/imported/Footsteps_Rock_Walk_02.wav-3c6b302b56ef13b2f247a86dacdae335.sample"]
+source_file="res://assets/audio/sfx/footsteps/footsteps_rock/Footsteps_Rock_Walk_02.wav"
+dest_files=["res://.godot/imported/Footsteps_Rock_Walk_02.wav-b0233bdde1f94239c4d32f9f0fc2d2f5.sample"]
 
 [params]
 

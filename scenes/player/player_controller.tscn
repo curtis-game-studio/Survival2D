@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://bpsqr6euak53h"]
 
-[ext_resource type="Script" uid="uid://crfd10shqit0t" path="res://Scenes/Player/States/PlayerStateMachine.gd" id="1_k0pio"]
-[ext_resource type="Script" uid="uid://d2a28gab02q2b" path="res://Scenes/Player/Scripts/Player.gd" id="1_kfrkp"]
+[ext_resource type="Script" uid="uid://crfd10shqit0t" path="res://scenes/player/states/player_state_machine.gd" id="1_k0pio"]
+[ext_resource type="Script" uid="uid://d2a28gab02q2b" path="res://scenes/player/scripts/player_controller.gd" id="1_kfrkp"]
 [ext_resource type="Texture2D" uid="uid://bd25uixqiq3yg" path="res://Assets/Sprites/Player Sprites.png" id="2_gym7l"]
-[ext_resource type="Script" uid="uid://6ek8e4rly1da" path="res://Scenes/Player/States/IdleState.gd" id="3_gym7l"]
-[ext_resource type="Script" uid="uid://bqlrdjef7fgrw" path="res://Scenes/Player/Scripts/Visual/Headbob.gd" id="3_icmko"]
-[ext_resource type="Script" uid="uid://dcoh08nmfneqi" path="res://Scenes/Player/States/MoveState.gd" id="4_uta3u"]
-[ext_resource type="Script" uid="uid://buq0g3bbwemvl" path="res://Scenes/Player/Scripts/Visual/CameraFollow.gd" id="6_uta3u"]
-[ext_resource type="Script" uid="uid://cao3w4sshc1tj" path="res://Scenes/Player/Scripts/Visual/FlipTowardsMouse.gd" id="7_w6ygp"]
-[ext_resource type="Script" uid="uid://cya3fncvvqvfy" path="res://Scenes/Player/Scripts/Audio/FootstepController.gd" id="9_373yl"]
-[ext_resource type="Script" uid="uid://d0qgb55n5hcmp" path="res://Scenes/Player/Scripts/Interactable Scripts/InteractionManager.gd" id="10_t4e4g"]
+[ext_resource type="Script" uid="uid://6ek8e4rly1da" path="res://scenes/player/states/idle_state.gd" id="3_gym7l"]
+[ext_resource type="Script" uid="uid://bqlrdjef7fgrw" path="res://scenes/player/scripts/player_headbob.gd" id="3_icmko"]
+[ext_resource type="Script" uid="uid://dcoh08nmfneqi" path="res://scenes/player/states/move_state.gd" id="4_uta3u"]
+[ext_resource type="Script" uid="uid://buq0g3bbwemvl" path="res://scenes/player/scripts/camera_follow.gd" id="6_uta3u"]
+[ext_resource type="Script" uid="uid://cya3fncvvqvfy" path="res://scenes/player/scripts/footstep_controller.gd" id="9_373yl"]
+[ext_resource type="Script" uid="uid://88b1t65bbyhm" path="res://scenes/player/scripts/face_mouse.gd" id="10_ers80"]
+[ext_resource type="Script" uid="uid://d0qgb55n5hcmp" path="res://systems/interaction manager/interaction_manager.gd" id="10_t4e4g"]
 
 [sub_resource type="Animation" id="Animation_gym7l"]
 resource_name = "PlayerIdle"
@@ -188,7 +188,7 @@ script = ExtResource("3_icmko")
 head_node_path = NodePath("../../../Sprites/Head")
 
 [node name="FlipToMouse" type="Node" parent="Components/Visual" node_paths=PackedStringArray("player_visuals")]
-script = ExtResource("7_w6ygp")
+script = ExtResource("10_ers80")
 player_visuals = NodePath("../../../Sprites")
 
 [node name="Player Collision" type="CollisionShape2D" parent="."]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cjsexird1gr8k"
-path="res://.godot/imported/Footsteps_Sand_Walk_18.wav-9181403c75071a36632b541a3a2235a1.sample"
+path="res://.godot/imported/Footsteps_Sand_Walk_18.wav-983601f301d2f64b0e7459a52c9833f6.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/Footsteps/Footsteps_Sand/Footsteps_Sand_Walk_18.wav"
-dest_files=["res://.godot/imported/Footsteps_Sand_Walk_18.wav-9181403c75071a36632b541a3a2235a1.sample"]
+source_file="res://assets/audio/sfx/footsteps/footsteps_sand/Footsteps_Sand_Walk_18.wav"
+dest_files=["res://.godot/imported/Footsteps_Sand_Walk_18.wav-983601f301d2f64b0e7459a52c9833f6.sample"]
 
 [params]
 

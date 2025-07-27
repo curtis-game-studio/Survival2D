@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dnwbda6t60fsj"
-path="res://.godot/imported/Footsteps_MetalV2_Walk_01.wav-073bf41f4b90e92c124922974b94125e.sample"
+path="res://.godot/imported/Footsteps_MetalV2_Walk_01.wav-326a8a5c4240b05421241439fc140dd8.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/Footsteps/Footsteps_Metal/Footsteps_MetalV2_Walk_01.wav"
-dest_files=["res://.godot/imported/Footsteps_MetalV2_Walk_01.wav-073bf41f4b90e92c124922974b94125e.sample"]
+source_file="res://assets/audio/sfx/footsteps/footsteps_metal/Footsteps_MetalV2_Walk_01.wav"
+dest_files=["res://.godot/imported/Footsteps_MetalV2_Walk_01.wav-326a8a5c4240b05421241439fc140dd8.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b1222pjieuwr2"
-path="res://.godot/imported/ambience_campfire.ogg-f783275bf5f4c8806ddfa609ef2a9b88.oggvorbisstr"
+path="res://.godot/imported/ambience_campfire.ogg-e97459ce5199a9dbc2140078ef20a38f.oggvorbisstr"
 
 [deps]
 
-source_file="res://Assets/Audio/Ambience/Campfire/ambience_campfire.ogg"
-dest_files=["res://.godot/imported/ambience_campfire.ogg-f783275bf5f4c8806ddfa609ef2a9b88.oggvorbisstr"]
+source_file="res://assets/audio/ambience/campfire/ambience_campfire.ogg"
+dest_files=["res://.godot/imported/ambience_campfire.ogg-e97459ce5199a9dbc2140078ef20a38f.oggvorbisstr"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SoundEvent" load_steps=3 format=3 uid="uid://brlif8d7acera"]
 
-[ext_resource type="Script" uid="uid://dvcwlb1203jp1" path="res://Systems/Audio Manager/sound_event.gd" id="1_05r1t"]
-[ext_resource type="AudioStream" uid="uid://bt3j1qyb8500x" path="res://Assets/Audio/Ambience/Forest/ambience_forest_birds.ogg" id="2_263b0"]
+[ext_resource type="Script" uid="uid://dvcwlb1203jp1" path="res://systems/audio manager/sound_event.gd" id="1_05r1t"]
+[ext_resource type="AudioStream" uid="uid://bt3j1qyb8500x" path="res://assets/audio/ambience/forest/ambience_forest_birds.ogg" id="2_263b0"]
 
 [resource]
 script = ExtResource("1_05r1t")

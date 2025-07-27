@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://hxvp0nekke0d"
-path="res://.godot/imported/Footsteps_Snow_Hard_Walk_07.wav-f82d88ab9b1ed9d1656c4d82d08e8b8e.sample"
+path="res://.godot/imported/Footsteps_Snow_Hard_Walk_07.wav-1b1cf007248f2a62090522304d9f6d18.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/Footsteps/Footsteps_Snow/Footsteps_Snow_Hard_Walk_07.wav"
-dest_files=["res://.godot/imported/Footsteps_Snow_Hard_Walk_07.wav-f82d88ab9b1ed9d1656c4d82d08e8b8e.sample"]
+source_file="res://assets/audio/sfx/footsteps/footsteps_snow/Footsteps_Snow_Hard_Walk_07.wav"
+dest_files=["res://.godot/imported/Footsteps_Snow_Hard_Walk_07.wav-1b1cf007248f2a62090522304d9f6d18.sample"]
 
 [params]
 

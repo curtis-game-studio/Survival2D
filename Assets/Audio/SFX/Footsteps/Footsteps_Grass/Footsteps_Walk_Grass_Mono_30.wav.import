@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://hhgdvwun7ork"
-path="res://.godot/imported/Footsteps_Walk_Grass_Mono_30.wav-2fe5ec9003f4b18acb990c0a63a14c42.sample"
+path="res://.godot/imported/Footsteps_Walk_Grass_Mono_30.wav-82fde4414d5628790cde42a8ddc0ce8b.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/Footsteps/Footsteps_Grass/Footsteps_Walk_Grass_Mono_30.wav"
-dest_files=["res://.godot/imported/Footsteps_Walk_Grass_Mono_30.wav-2fe5ec9003f4b18acb990c0a63a14c42.sample"]
+source_file="res://assets/audio/sfx/footsteps/footsteps_grass/Footsteps_Walk_Grass_Mono_30.wav"
+dest_files=["res://.godot/imported/Footsteps_Walk_Grass_Mono_30.wav-82fde4414d5628790cde42a8ddc0ce8b.sample"]
 
 [params]
 
